@@ -9,10 +9,10 @@ pub struct DCDMock {
 }
 
 impl DCDMock {
-    pub fn new(root: String) -> DCDMock {
+    pub fn new(root: String, mock_commits: String) -> DCDMock {
         let database = DCD::new(root.clone());
         let commit_messages =
-            DCDMock::load_commit_messages("data/mock_commit_messages.csv".to_string());
+            DCDMock::load_commit_messages(mock_commits.to_string());
 
         DCDMock { database, commit_messages }
     }
@@ -98,7 +98,8 @@ mod tests {
     }
 
     #[test] fn test_load_whole_dcd() {
-        let dcd = DCDMock::new("/dejavuii/dejacode/dataset-small/".to_string());
+        let dcd = DCDMock::new("/dejavuii/dejacode/dataset-small/".to_string(),
+                                        "data/mock_commit_messages.csv".to_string());
 
         let expected: Option<Message> = Some("ostylowanie\\n".as_bytes().to_vec());
         let actual: Option<Message> = dcd.get_commit(0).unwrap().message;
