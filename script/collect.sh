@@ -6,7 +6,7 @@ wanted=1000000 #856411
 for list in `find . -name '*.csv'`
 do
     echo "$list"
-    number_here=`tail -n +2 "$list" | wc -l`
+    number_here=$(tail -n +2 "$list" | wc -l)
 
     number=$((number + number_here))
     echo "$number"
