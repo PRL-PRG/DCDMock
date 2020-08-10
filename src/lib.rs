@@ -2,7 +2,6 @@ use dcd::{DCD, Message};
 use dcd::Database;
 use dcd::{Commit,   Project,   User, };
 use dcd::{CommitId, ProjectId, UserId};
-use std::io::Read;
 
 pub struct DCDMock {
     database: DCD,
@@ -98,7 +97,7 @@ mod tests {
         DCDMock::load_commit_messages("data/mock_commit_messages.csv".to_string());
     }
 
-    #[test] fn test_load_whole_DCD() {
+    #[test] fn test_load_whole_dcd() {
         let dcd = DCDMock::new("/dejavuii/dejacode/dataset-small/".to_string());
 
         let expected: Option<Message> = Some("ostylowanie\n".as_bytes().to_vec());
