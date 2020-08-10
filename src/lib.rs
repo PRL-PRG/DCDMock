@@ -100,7 +100,7 @@ mod tests {
     #[test] fn test_load_whole_dcd() {
         let dcd = DCDMock::new("/dejavuii/dejacode/dataset-small/".to_string());
 
-        let expected: Option<Message> = Some("ostylowanie\n".as_bytes().to_vec());
+        let expected: Option<Message> = Some("ostylowanie\\n".as_bytes().to_vec());
         let actual: Option<Message> = dcd.get_commit(0).unwrap().message;
 
         assert_eq!(expected, actual);
