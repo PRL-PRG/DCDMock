@@ -1,20 +1,22 @@
+# DCD mock
+
 This crate is a mostyl--drop=in replacement that will patch the missing commit
 messages in GH datasets using a collection of 1M real commits. The commit
 messages will not reflect the messages of the original commits and can repeat.
 
-# Quick and dirty assumptions
+## Quick and dirty assumptions
 
 * `https://github.com/PRL-PRG/dejacode-downloader` and `DCDMock` are subdirectories of the same directory
 
 Since this is all temporary, all those paths are hardcoded in DCDMock.
 
-# Tests
+## Tests
 
 There are two tests that do very basic checks. They are not exhaustive by any means. They both take a while to complete.
 
 * the tests assume GitHub dataset can be found at `/dejavuii/dejacode/dataset-small/`
 
-# Usage
+## Usage
 
 In your `Cargo.toml` file add a line in the `[dependency]` section:
 
